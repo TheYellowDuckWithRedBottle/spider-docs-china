@@ -12,7 +12,7 @@ import spiderdocschina.entity.CardItem;
 import spiderdocschina.service.CardItemService;
 import spiderdocschina.utils.HttpUtils;
 
-@Component
+
 public class CardItemTask {
     org.slf4j.Logger logger = LoggerFactory.getLogger(getClass());
     @Autowired
@@ -24,22 +24,20 @@ public class CardItemTask {
 
     @Scheduled(fixedDelay = 100*1000)
     public  void itemTask() throws Exception {
-        String url = "http://www.baidu.com";
+        String url = "https://docschina.org";
         String html = httpUtils.doGetHtml(url);
         parse(html);
-        System.out.println("著去完成");
-
     }
     private  void parse(String html){
         Document doc = Jsoup.parse(html);
         logger.info(String.valueOf(doc));
 
-        Elements spuEles = doc.select("div .ctxt");
-        for(Element spuEle:spuEles){
-            String topic =spuEle.select("[target]").attr("title");
+        Elements titles = doc.select("div.dc-home-card-items");
+        for(Element title:titles){
+            System.out.println(title);
 
             CardItem cardItem = new CardItem();
-            cardItem.setDescription(topic);
+            //cardItem.setDescription(topic);
             cardItemService.saveCardInfo(cardItem);
         }
 
