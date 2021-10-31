@@ -10,6 +10,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class HttpUtils {
+    private int timeout = 20000;
+    private int waitForBackgroundJS = 20000;
+
     private PoolingHttpClientConnectionManager cm;
 
     public HttpUtils() {
