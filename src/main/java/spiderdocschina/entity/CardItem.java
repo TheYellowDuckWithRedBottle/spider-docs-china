@@ -13,40 +13,69 @@ public class CardItem {
     @Id
     @GeneratedValue
     private Long id;
-    private String labelName;
-    private String imgUrl;
-    private String description;
-    private String toolLink;
-    private Boolean hasRibbon;
+    private String name;
+    private String logo;
+    private String desc;
+    private String repository;
+    private String team;
+    private String home;
 
     public CardItem() {
     }
 
-    public CardItem(String labelName, String imgUrl, String description, String toolLink, Boolean hasRibbon) {
-        this.labelName = labelName;
-        this.imgUrl = imgUrl;
-        this.description = description;
-        this.toolLink = toolLink;
-        this.hasRibbon = hasRibbon;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setLabelName(String labelName) {
-        this.labelName = labelName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
+    public void setLogo(String logo) {
+        this.logo = logo;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
-    public void setToolLink(String toolLink) {
-        this.toolLink = toolLink;
+    public void setRepository(String repository) {
+        this.repository = repository;
     }
 
-    public void setHasRibbon(Boolean hasRibbon) {
-        this.hasRibbon = hasRibbon;
+    public void setTeam(String team) {
+        this.team = team;
+    }
+
+    public void setHome(String home) {
+        this.home = home;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public String getRepository() {
+        return repository;
+    }
+
+    public String getTeam() {
+        return team;
+    }
+
+    public String getHome() {
+        return home;
     }
 }
