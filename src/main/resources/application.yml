@@ -10,7 +10,7 @@ spring:
       password: root
   data:
     mongodb:
-      uri: mongodb://121.5.152.154:27017/docsChina
+      uri: mongodb://121.5.152.154:27018/docsChina
 #  jpa:
 #    hibernate:
 #      ddl-auto: update  # 第一次建表create  后面用update，要不然每次重启都会新建表
