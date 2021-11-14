@@ -13,7 +13,7 @@ public class TechCate {
     private String id;
     @Field("_updateTime")
     private String _updateTime;
-    @Field("lable")
+    @Field("label")
     private String label;
     @Field("list")
     private List<CardItem> cardList;
